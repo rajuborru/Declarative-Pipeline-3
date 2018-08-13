@@ -12,11 +12,6 @@ pipeline {
               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '287fcaab-1a9e-4fad-93d2-2d0f5cb3b5b3', url: 'https://github.com/AugustoPeralta/spring-boot.git']]])
           }
      }
-     stage('Configure') {
-          steps {
-              env.PATH = "${tool 'maven'}/bin:${env.PATH}"
-          }
-     }           
     
      stage('Build') {
           steps {
@@ -30,9 +25,5 @@ pipeline {
              archive 'target/*.jar'
           }
      }
-    
-    
-    
-    
   }
 }
