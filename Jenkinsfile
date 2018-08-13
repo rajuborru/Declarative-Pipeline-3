@@ -4,15 +4,7 @@ pipeline {
   
   tools {
       maven 'maven'
-  }
-
-  stages {
-    
-     stage('Configure') {
-          steps {
-              env.PATH = "${tool 'maven'}/bin:${env.PATH}"
-          }
-     }       
+  }      
 
      stage('Checkout') {
           steps {
