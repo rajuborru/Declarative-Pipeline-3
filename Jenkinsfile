@@ -16,12 +16,6 @@ pipeline {
           steps {
               env.PATH = "${tool 'maven'}/bin:${env.PATH}"
           }
-     }       
-
-     stage('Checkout') {
-          steps {
-              git 'https://github.com/AugustoPeralta/spring-boot.git'
-          }
      }           
     
      stage('Build') {
